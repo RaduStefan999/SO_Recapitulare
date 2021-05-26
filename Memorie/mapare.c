@@ -18,7 +18,7 @@ int main ()
 
     /* Mapare */
 
-    void * adresa = mmap(NULL, sb.st_size, PROT_READ | PROT_WRITE, MAP_PRIVATE, fd, 0);
+    void * adresa = mmap(NULL, sb.st_size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
 
     /* Operatii pe sir */
 
@@ -39,7 +39,7 @@ int main ()
 
     /* Sincronizare */
 
-    msync(adresa, sb.st_size, MS_ASYNC);
+    msync(adresa, sb.st_size, MS_SYNC);
 
     close(fd);
 
