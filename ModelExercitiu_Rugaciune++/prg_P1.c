@@ -6,6 +6,7 @@
 #include "sys/types.h"
 #include "string.h"
 
+
 int main (int argc, char* argv[])
 {
     int fd_date_de_la_1 = open(argv[1], O_RDWR, 0600);
@@ -29,9 +30,11 @@ int main (int argc, char* argv[])
     }
 
 
-    int fd_date_catre_0 = open(argv[2], O_RDWR, 0600);
-    
-    write(fd_date_catre_0, date, 100);
+    int fd_catre_0 = atoi(argv[2]);
 
-    close(fd_date_catre_0);
+    write(fd_catre_0, date, 100);
+
+    close(fd_catre_0);
+
+    return 0;
 }
